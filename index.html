@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cờ bạc là bác thằng bần</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #c0392b;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .music {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .music button {
+            padding: 10px 20px;
+            background: #8e44ad;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .admin-bar {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .comments {
+            margin-top: 40px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            font-size: 14px;
+        }
+
+        .send-btn {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comment {
+            background: #eee;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            font-size: 12px;
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+
+        .time {
+            font-size: 12px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+   <div id="warningPopup" style="
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.85);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+">
+    <div style="
+        max-width:500px;
+        background:#111;
+        padding:25px;
+        border-radius:10px;
+        text-align:center;
+        box-shadow:0 0 20px #000;
+    ">
+        <h2 style="color:#e74c3c;">⚠️ CẢNH TỈNH</h2>
+        <p style="line-height:1.6;">
+            Cờ bạc không phải trò chơi giải trí.<br>
+            Nó là cái bẫy được thiết kế để lấy tiền,
+            lấy thời gian và hủy hoại tương lai.
+        </p>
+        <p style="color:#ccc;font-size:14px;">
+            Nếu bạn hoặc người thân đang dính cờ bạc,
+            hãy dừng lại trước khi quá muộn.
+        </p>
+        <button onclick="closePopup()" style="
+            margin-top:15px;
+            padding:10px 25px;
+            background:#e74c3c;
+            border:none;
+            border-radius:5px;
+            color:#fff;
+            font-size:16px;
+            cursor:pointer;
+        ">
+            Tôi đã hiểu
+        </button>
+    </div>
+</div>
+
+<div class="container">
+
+    <h1>Cờ bạc là bác thằng bần</h1>
+    <p>
+          Dưới là cổng game siêu dớp cứ chuyên giết chết bao nhiêu con bạc cũng bao nhiêu
+          con người tò mò khác và phá hoại bao nhiêu gia đình rơi vào cảnh ly tán thậm trí
+          con bạc tự tử vì bất lực và hối hận tột độ.
+    </p>
+
+    <p style="font-size:20px; font-weight:bold; color:#c0392b;">
+         Cổng game bên dưới là: hit club, go88, x8, Vic, fa88, yo88...
+    </p>
+
+    <p>
+         Hãy tránh xa nó đừng để nó phá hủy cuộc sống của bạn vì một chút tò mò chơi thử
+         mà phải trả một cái giá rất đắt đó là mất rất nhiều tiền, rơi vào cảnh nợ lần
+         túng thiếu, mất bạn bè người thân….
+    </p>
+
+    <img src="game sieu dop cut.jpg" alt="Cờ bạc">
+
+    <p>
+        Cờ bạc không làm giàu cho ai cả. Nó được tạo ra để lấy tiền,
+        lấy thời gian và lấy luôn tương lai của người chơi.
+    </p>
+
+    <p>
+        Người thắng chỉ là mồi nhử. Người thua mới là khách hàng thật sự.
+        Khi bạn nhận ra thì nợ nần, áp lực và hối hận đã ở ngay sau lưng.
+    </p>
+
+    <!-- NHẠC -->
+    <div class="music">
+        <button onclick="toggleMusic()">🔊 Bật / Tắt nhạc cảnh tỉnh</button>
+    </div>
+
+    <!-- ADMIN -->
+    <div class="admin-bar">
+        <button onclick="adminLogin()">Admin</button>
+        <button onclick="adminLogout()">Thoát</button>
+    </div>
+
+    <!-- BÌNH LUẬN -->
+    <div class="comments">
+        <h2>Bình luận
+            <ul>
+  <li>Hãy lên tiếng để cảnh báo và giúp thế hệ trẻ tránh xa cờ bạc trên mạng.</li>
+  <li>Một lời bình luận đúng lúc có thể giúp thế hệ trẻ nhận ra tác hại và tránh xa cờ bạc trực tuyến.</li>
+  <li>Cùng bình luận để định hướng thế hệ trẻ, đừng để cờ bạc mạng hủy hoại tương lai.</li>
+  <li>Hãy dùng tiếng nói của chúng ta để bảo vệ thế hệ trẻ khỏi cạm bẫy cờ bạc online.</li>
+</ul>
+
+        </h2>
+
+        <input type="text" id="name" placeholder="Tên của bạn (có thể để trống)">
+
+        <label>
+            <input type="checkbox" id="anonymous"> Bình luận ẩn danh
+        </label>
+
+        <textarea id="message" rows="4" placeholder="Nội dung bình luận..."></textarea>
+
+        <button class="send-btn" onclick="addComment()">Gửi bình luận</button>
+
+        <div id="commentList"></div>
+    </div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5fbc3a70a1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+    const commentList = document.getElementById("commentList");
+    const bgMusic = document.getElementById("bgMusic");
+
+    const ADMIN_PASSWORD = "admin123";
+    let isAdmin = sessionStorage.getItem("isAdmin") === "true";
+
+    function closePopup() {
+    document.getElementById("warningPopup").style.display = "none";
+}
+
+    function loadComments() {
+        const comments = JSON.parse(localStorage.getItem("comments")) || [];
+        commentList.innerHTML = "";
+
+        comments.forEach((c, index) => {
+            const div = document.createElement("div");
+            div.className = "comment";
+
+            div.innerHTML = `
+                ${isAdmin ? `<button class="delete-btn" onclick="deleteComment(${index})">Xóa</button>` : ""}
+                <strong>${c.name}</strong>
+                <div class="time">${c.time}</div>
+                <div>${c.message}</div>
+            `;
+
+            commentList.appendChild(div);
+        });
+    }
+
+    function addComment() {
+        let name = document.getElementById("name").value.trim();
+        let message = document.getElementById("message").value.trim();
+        const anonymous = document.getElementById("anonymous").checked;
+
+        if (!message) {
+            alert("Vui lòng nhập nội dung bình luận!");
+            return;
+        }
+
+        if (anonymous || name === "") {
+            name = "Ẩn danh";
+        }
+
+        const time = new Date().toLocaleString("vi-VN");
+
+        const comments = JSON.parse(localStorage.getItem("comments")) || [];
+        comments.push({ name, message, time });
+        localStorage.setItem("comments", JSON.stringify(comments));
+
+        document.getElementById("name").value = "";
+        document.getElementById("message").value = "";
+        document.getElementById("anonymous").checked = false;
+
+        loadComments();
+    }
+
+    function deleteComment(index) {
+        const comments = JSON.parse(localStorage.getItem("comments")) || [];
+        comments.splice(index, 1);
+        localStorage.setItem("comments", JSON.stringify(comments));
+        loadComments();
+    }
+
+    function adminLogin() {
+        const pass = prompt("Nhập mật khẩu admin:");
+        if (pass === ADMIN_PASSWORD) {
+            isAdmin = true;
+            sessionStorage.setItem("isAdmin", "true");
+            alert("Đăng nhập admin thành công");
+            loadComments();
+        } else {
+            alert("Sai mật khẩu!");
+        }
+    }
+
+    function adminLogout() {
+        isAdmin = false;
+        sessionStorage.removeItem("isAdmin");
+        alert("Đã thoát admin");
+        loadComments();
+    }
+
+    function toggleMusic() {
+        bgMusic.paused ? bgMusic.play() : bgMusic.pause();
+    }
+
+    loadComments();
+</script>
+
+</body>
+</html>
