@@ -185,12 +185,105 @@ z-index:9999;
 
     <!-- BÌNH LUẬN -->
     <div class="comments">
-        <h2>Bình luận
-            <ul>
+        <h2>Bình luận và chia sẻ
+           
+<ul> 
   <li>Hãy lên tiếng để cảnh báo và giúp thế hệ trẻ tránh xa cờ bạc trên mạng.</li>
   <li>Một lời bình luận đúng lúc có thể giúp thế hệ trẻ nhận ra tác hại và tránh xa cờ bạc trực tuyến.</li>
   <li>Cùng bình luận để định hướng thế hệ trẻ, đừng để cờ bạc mạng hủy hoại tương lai.</li>
   <li>Hãy dùng tiếng nói của chúng ta để bảo vệ thế hệ trẻ khỏi cạm bẫy cờ bạc online.</li>
+  <li>Hãy chia sẻ rộng rãi để thế hệ trẻ cùng biết và tránh xa. Một lượt chia sẻ của bạn biết đâu sẽ làm 
+    cho xã hội bớt đi một con bạc và góp phần phát triển đất nước vì tiền không bị mất đi, hãy chung tay cùng mình nhé, 
+    cám ơn các bạn. Chia sẻ ở nút bấm bên dưới</li>
+</br>
+
+<!-- SHARE BUTTONS START -->
+<style>
+  .share-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .share-btn {
+    padding: 8px 12px;
+    background: #f2f2f2;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  .share-btn:hover {
+    background: #ddd;
+  }
+</style>
+
+<div class="share-container">
+  <a class="share-btn" href="#" id="share-facebook">Facebook</a>
+  <a class="share-btn" href="#" id="share-zalo">Zalo</a>
+  <a class="share-btn" href="#" id="share-messenger">Messenger</a>
+  <a class="share-btn" href="#" id="share-telegram">Telegram</a>
+  <a class="share-btn" href="#" id="share-email">Email</a>
+  <button class="share-btn" id="copy-link">Copy Link</button>
+  <button class="share-btn" id="show-qr">QR Code</button>
+</div>
+
+<div id="qr-popup" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); justify-content:center; align-items:center;">
+  <div style="background:#fff; padding:20px; border-radius:8px; text-align:center;">
+    <div id="qrcode"></div>
+    <br>
+    <button onclick="closeQR()" class="share-btn">Đóng</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+<script>
+  const url = encodeURIComponent("https://suvuontoi.github.io/hit-go88/");
+
+  document.getElementById("share-facebook").href =
+    "https://www.facebook.com/sharer/sharer.php?u=" + url;
+
+  document.getElementById("share-zalo").href =
+    "https://social.zalo.me/share?url=" + url;
+
+  document.getElementById("share-messenger").href =
+    "fb-messenger://share/?link=" + url;
+
+  document.getElementById("share-telegram").href =
+    "https://t.me/share/url?url=" + url;
+
+  document.getElementById("share-email").href =
+    "mailto:?subject=Check%20this%20out&body=" + url;
+
+  document.getElementById("copy-link").onclick = () => {
+    navigator.clipboard.writeText("https://suvuontoi.github.io/hit-go88/")
+      .then(() => alert("Đã sao chép link!"));
+  };
+
+  document.getElementById("show-qr").onclick = () => {
+    document.getElementById("qr-popup").style.display = "flex";
+    QRCode.toCanvas(document.getElementById("qrcode"), "https://suvuontoi.github.io/hit-go88/");
+  };
+
+  function closeQR() {
+    document.getElementById("qr-popup").style.display = "none";
+    document.getElementById("qrcode").innerHTML = "";
+  }
+</script>
+<!-- SHARE BUTTONS END -->
+  <a target="_blank"
+   href="https://www.facebook.com/sharer/sharer.php?u=https://suvuontoi.github.io/hit-go88/"
+   style="background:#1877f2;color:#fff;padding:10px;border-radius:6px;text-decoration:none;">
+   Facebook
+</a>
+
+<a target="_blank"
+   href="https://zalo.me/share?url=https://suvuontoi.github.io/hit-go88/"
+   style="background:#0068ff;color:#fff;padding:10px;border-radius:6px;text-decoration:none;margin-left:5px;">
+   Zalo
+</a>
 </ul>
 
         </h2>
@@ -305,6 +398,21 @@ z-index:9999;
 
     loadComments();
 </script>
+
+<div style="position:fixed;bottom:20px;left:20px;z-index:9999;">
+  
+  <a target="_blank"
+     href="https://www.facebook.com/sharer/sharer.php?u=https://USERNAME.github.io/REPO/"
+     style="background:#1877f2;color:#fff;padding:10px;border-radius:6px;text-decoration:none;">
+     Facebook
+  </a>
+
+  <a target="_blank"
+     href="https://zalo.me/share?url=https://USERNAME.github.io/REPO/"
+     style="background:#0068ff;color:#fff;padding:10px;border-radius:6px;text-decoration:none;margin-left:5px;">
+     Zalo
+  </a>
+</div>
 
 </body>
 </html>
